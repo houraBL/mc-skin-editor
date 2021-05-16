@@ -112,6 +112,7 @@ CanvasTexture.prototype = {
     _yCross: -1,
     _parentTexture: [],
 
+    
     addParent: function ( parentTexture ) {
         if ( this._parentTexture.indexOf( parentTexture ) === - 1 ) {
             this._parentTexture.push( parentTexture );
