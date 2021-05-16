@@ -1,0 +1,18 @@
+
+.library h2 {
+    flex-grow: 1;
+    font-size: small;
+    margin: 0.5rem;
+}
+
+.item-list .list-group-item {
+    cursor: pointer;
+  }
+  
+.item-list .list-group-item:hover {
+    background-color:mediumaquamarine;
+}
+
+.skin-layers {
+    background-color: oldlace;
+}

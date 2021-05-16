@@ -1,0 +1,19 @@
+.redactor{
+    
+}
+
+
+.drawing-canvas {
+    z-index: 3000;
+    width: 256px;
+    height: 256px;
+    image-rendering: pixelated; 
+}
+
+
+.renderer-canvas {
+    width: 100%;
+    height: 100%;
+    display:block;
+}
+

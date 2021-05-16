@@ -1,0 +1,17 @@
+.navbar{
+    background-color:mintcream;
+}
+
+
+.btn{
+    color: lightgrey;
+}
+
+
+.btn-primary{
+    background-color: mediumseagreen;
+}
+
+input{
+    width: 3rem;
+}
