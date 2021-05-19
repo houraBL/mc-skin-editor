@@ -8,6 +8,8 @@ import './redactor.css';
 let camera, scene, renderer, controls, skinTexture;
 let canvas, drawingCanvas, drawingContext;
 let container;
+let visibleLayers;
+let color;
 let layers = [];
 var i = 0;
 
@@ -155,7 +157,7 @@ CanvasTexture.prototype = {
         this._context2D.drawImage( drawingCanvas, 0, 0 );
         
         // Fill pixel.
-        this._context2D.fillStyle = "#00ff00";
+        this._context2D.fillStyle = color || "#000000";
         this._context2D.beginPath();
         this._context2D.rect( this._xCross, this._yCross, 1, 1);
         this._context2D.fill();
@@ -419,8 +421,7 @@ function layersUpdate(skinLayers) {
     
 }
 
-function checkSkinLayers(skinLayers){
-    var visibleLayers = skinLayers.filter((el) => el.visible).map(a => a.id);
+function checkSkinLayers(skinLayers){     
 
     layers.forEach(element => {
         if (visibleLayers.includes( element.id )){
@@ -439,6 +440,10 @@ function checkSkinLayers(skinLayers){
     }
 }
 
+function setColor(hexColor) {
+    color = hexColor;
+}
+
 class Redactor extends React.Component {
 
     componentDidMount() {        
@@ -450,13 +455,17 @@ class Redactor extends React.Component {
     }
 
     render() {
-        checkSkinLayers(this.props.skinLayersData);
-        
+
+        if ( visibleLayers !== this.props.skinLayersData.filter((el) => el.visible).map(a => a.id) ) {
+            visibleLayers = this.props.skinLayersData.filter((el) => el.visible).map(a => a.id);
+            checkSkinLayers(this.props.skinLayersData);
+        }
+        setColor(this.props.hexColor);
 
         return (
-            <div id="container" >
+            <div id="container" className="align-self-stretch p-1" >
                
-                <canvas id="renderer-canvas" className="renderer-canvas " />
+                <canvas id="renderer-canvas" className="renderer-canvas " ></canvas>
                 <canvas id="drawing-canvas" className="drawing-canvas " height="64" width="64"></canvas>
                 
                 

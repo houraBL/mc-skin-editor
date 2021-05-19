@@ -6,11 +6,9 @@ const TopPanel = () => {
     return (
         <div className="pos-f-t">
             <nav className="navbar " >
-                <h4 className="navbar-brand" >MC Skin Editor</h4>
-                <div className="container">                    
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+                <h4 className=" col-md-3" >MC Skin Editor</h4>
+                <div className="container col-md-7">                    
+                   
                     <div className="btn-group" role="group" >
                         <button className="btn " type="button" >2d</button>
                         <button className="btn " type="button" >3d</button>
@@ -26,7 +24,7 @@ const TopPanel = () => {
                         <button className="btn " type="button" >[+]</button>
                     </div>                    
                 </div>
-                <div className="btn-group" role="group" aria-label="Basic example">
+                <div className="btn-group col-md-2" role="group" aria-label="Basic example">
                         <button className="btn btn-primary" type="button" >AIPhoto</button>
                         <button className="btn btn-primary" type="button" >Export</button>
                 </div>

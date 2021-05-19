@@ -12,9 +12,6 @@ export default class SkinLayers extends React.Component {
         onEdit: false,
         onVisible: false,
         label: this.props.label,
-        canvas : '',
-        context: '',
-        skinImage: '',
     }
    
 
@@ -37,37 +34,33 @@ export default class SkinLayers extends React.Component {
 
         return (   
             <div className="list-group-item list-group-item-action">
-            {this.state.isMain? (
-                <div>
-                    <label>{this.state.label}</label>
-                    <button type="button"
-                        className="btn btn-outline-info float-right"
-                        onClick={onToggleHide} disabled>
-                    hide
-                    </button>
-                </div>
-            ):(
-                <div>
+                {this.state.isMain? (
+                    <div>
+                        <label>{this.state.label}</label>
+                        <button type="button"
+                            className="btn btn-outline-info float-right"
+                            size="sm"
+                            onClick={onToggleHide} disabled>
+                        hide
+                        </button>
+                    </div>
+                ):(
+                    <div>
 
-                    <label>{this.state.label}</label>
-                    <button type="button"
-                        className="btn btn-outline-danger float-right"
-                        onClick={onDeleted}>
-                        del
-                    </button>
-                    <button type="button"
-                        className="btn btn-outline-info float-right"
-                        onClick={onToggleHide}>
-                    hide
-                    </button>
-                </div>
-            )
-            }
-            </div>                 
-           
-                    
+                        <label>{this.state.label}</label>
+                        <button type="button"
+                            className="btn btn-outline-danger float-right"
+                            onClick={onDeleted}>
+                            del
+                        </button>
+                        <button type="button"
+                            className="btn btn-outline-info float-right"
+                            onClick={onToggleHide}>
+                        hide
+                        </button>
+                    </div>
+                )}
+            </div>
         );
     }
-
-   
 };

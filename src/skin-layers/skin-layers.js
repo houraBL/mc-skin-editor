@@ -18,7 +18,7 @@ const SkinLayers = ({skinLayers, onDeleted, onToggleHide}) => {
 
 
     return (
-        <div className="">
+        <div className="d-block p-1 ">
             <h5>SkinLayers</h5>
             <ul className="item-list list-group list-group-flush list-group-item-action">
                 {elements}
